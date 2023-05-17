@@ -1,0 +1,20 @@
+global:
+  amp:
+    enabled: true
+    prometheusServerEndpoint: http://localhost:8005/workspaces/$<AMP_WORKSPACE_ID>
+    remoteWriteService: https://aps-workspaces.us-east-1.amazonaws.com/workspaces/$<AMP_WORKSPACE_ID>/api/v1/remote_write
+    sigv4:
+      region: us-east-1
+
+sigV4Proxy:
+  region: us-east-1
+  host: aps-workspaces.us-east-1.amazonaws.com
+
+kubecostProductConfigs:
+  clusterName: AWS-cluster-one
+
+prometheus:
+  server:
+    global:
+      external_labels:
+        cluster_id: AWS-cluster-one
